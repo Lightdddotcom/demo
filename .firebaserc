@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "alotgolf-1498212855131": {
+      "hosting": {
+        "demo": [
+          "alotgolf-1498212855131"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "alotgolf-1498212855131"
+  }
+}

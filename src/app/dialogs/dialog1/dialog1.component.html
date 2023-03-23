@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Add Product Items</h1>
+  <div class="col-md-12">
+    <div class="row">
+      <form [formGroup]="AddProductForm" (ngSubmit)="onSubmit()">
+      <div class="col-md-12">
+        <label for="">รหัสสินค้า: </label>
+        <input type="text" class="form-control" formControlName="productID" placeholder="รหัสสินค้า" [ngClass]="{ 'is-invalid': submitted && f.productID.errors }">
+        <div *ngIf="submitted && f.productID.errors" class="invalid-feedback">
+          <div *ngIf="f.productID.errors.required">
+            โปรดระบุรหัสสินค้า
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="">ชื่อสินค้า : </label>
+        <input type="text" class="form-control" formControlName="productName" placeholder="ชื่อสินค้า" [ngClass]="{ 'is-invalid': submitted && f.productName.errors }">
+        <div *ngIf="submitted && f.productName.errors" class="invalid-feedback">
+          <div *ngIf="f.productName.errors.required">
+            โปรดระบุชื่อสินค้า
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="">ราคา : </label>
+        <input type="number" class="form-control" formControlName="productPrice" placeholder="ราคา" [ngClass]="{ 'is-invalid': submitted && f.productPrice.errors }">
+        <div *ngIf="submitted && f.productPrice.errors" class="invalid-feedback">
+          <div *ngIf="f.productPrice.errors.required">
+            โปรดระบุราคา
+          </div>
+        </div>
+      </div>  
+      <div class="col-md-12 mt-3">
+        <button type="button" (click)="onNoClick()" class="btn btn-secondary">Close</button>&nbsp;&nbsp;
+        <button type="submit" class="btn btn-primary">Add Item</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>

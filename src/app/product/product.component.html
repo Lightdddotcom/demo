@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Product list</h1>
+    <div class="col-md-12">
+      <div class="row justify-content-center">
+        <div class="col-md-12 mb-2"><button class="btn btn-sm btn-primary" (click)="openDialog()">Add More Product</button>&nbsp;&nbsp;<a routerLink="/" class="btn btn-sm btn-secondary" (click)="logout()">LogOut</a>
+        </div>
+        <div class="col-md-12">
+          <div class="col-md-12 pb-2">
+            <div class="input-group">
+              <input type="text" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" placeholder="Search Product Name" (keyup)="Onsearch()">
+            </div>
+          </div>
+          <div class="list-group users-list">
+            <div *ngFor="let items of itemdata" class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="row">
+                <div class="col col-md-10">
+                  <div>ID: {{items.ID}}</div>
+                  <h5 class="mb-1">Name: {{items.NAME}}</h5>
+                  <small>ราคา: {{items.PRICE}}</small>
+                </div>
+                <div class="col col-md-2">
+                  <button class="btn btn-sm btn-danger" (click)="delete(items.value)">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</div>

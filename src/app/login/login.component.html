@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Login Form</h1>
+  <div class="col-md-12">
+    <div class="row">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="col-md-6">
+        <label for="">Username : </label>
+        <input type="email" class="form-control" formControlName="username" placeholder="Authentication Email" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <div *ngIf="f.username.errors.required">
+            Authentication Email is required
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="">Password : </label>
+        <input type="password" class="form-control" formControlName="mainpassword" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.mainpassword.errors }">
+        <div *ngIf="submitted && f.mainpassword.errors" class="invalid-feedback">
+          <div *ngIf="f.mainpassword.errors.required">
+            Password is required
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 mt-3">
+        <button type="submit" class="btn btn-primary">Login</button>&nbsp;|&nbsp;
+        <a class="btn btn-secondary" routerLink="/register">Register</a>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
